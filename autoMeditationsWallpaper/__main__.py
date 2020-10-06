@@ -1,12 +1,9 @@
 import ctypes
-import os
-
-from autoMeditationsWallpaper.textSlicer import findLines2
-from autoMeditationsWallpaper.textFormatter import TextFormatter
-
+from pathlib import Path
+from autoMeditationsWallpaper.textSlicer import find_lines
 
 def main():
 
 
-    findLines2()
-    ctypes.windll.user32.SystemParametersInfoW(20, 0,"C:\\Users\\Lord of Eight peaks\\PycharmProjects\\StoicWallpaperGenerator\\sample-out.png",0)
+    find_lines()
+    ctypes.windll.user32.SystemParametersInfoW(20, 0, str(Path("sample-out.png").resolve()),0)

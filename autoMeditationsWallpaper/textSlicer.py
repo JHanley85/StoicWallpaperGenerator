@@ -1,10 +1,10 @@
+from pathlib import Path
 from random import randrange
 
 from autoMeditationsWallpaper.wallpaperMaker import textToImage
 
 
-
-def findLines2():
+def find_lines():
     excerpts = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12],
                 [1, 13], [1, 14], [1, 15], [1, 16], [1, 17], [2, 1], [2, 2], [2, 3], [2, 4], [2, 6], [2, 7], [2, 8],
                 [2, 9], [2, 10], [2, 11], [2, 12], [2, 13], [2, 14], [2, 15], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5],
@@ -43,25 +43,23 @@ def findLines2():
                 [12, 9], [12, 10], [12, 11], [12, 12], [12, 13], [12, 14], [12, 15], [12, 16], [12, 17], [12, 18],
                 [12, 19], [12, 20], [12, 21], [12, 22], [12, 23], [12, 24], [12, 25], [12, 26], [12, 27]]
 
-    randomExcerpt = randrange(0, len(excerpts)-1)
-
+    randomExcerpt = randrange(0, len(excerpts) - 1)
 
     start_string = excerpts[randomExcerpt][1]
     end_string = start_string + 1
     text = []
 
-    #with open('C:\\Users\\Lord of Eight peaks\\PycharmProjects\\StoicWallpaperGenerator\\autoMeditationsWallpaper\\meditations\\book' + str(10) + '.txt', 'rt') as myfile:
-    with open('C:\\Users\\Lord of Eight peaks\\PycharmProjects\\StoicWallpaperGenerator\\autoMeditationsWallpaper\\meditations\\book' + str(excerpts[randomExcerpt][0]) + '.txt', 'rt') as myfile:
+    with open(str(Path("autoMeditationsWallpaper/meditations").resolve()) + "\\book" + str(
+            excerpts[randomExcerpt][0]) + '.txt', 'rt') as myfile:
 
         for line in myfile:
 
             if len(line) > 1:
                 first_word = line.split()[0]
-                if first_word == int_to_Roman(end_string) + ".":
-
+                if first_word == int_to_roman(end_string) + ".":
 
                     break
-                elif first_word == int_to_Roman(start_string) + ".":
+                elif first_word == int_to_roman(start_string) + ".":
 
                     text.append(line.rstrip('\n'))
                 elif len(text) != 0:
@@ -71,7 +69,7 @@ def findLines2():
     textToImage(text, excerpts[randomExcerpt][0])
 
 
-def int_to_Roman(num):
+def int_to_roman(num):
     val = [
         1000, 900, 500, 400,
         100, 90, 50, 40,
