@@ -3,6 +3,7 @@ from random import randrange
 from autoMeditationsWallpaper.wallpaperMaker import textToImage
 
 
+
 def findLines2():
     excerpts = [[1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12],
                 [1, 13], [1, 14], [1, 15], [1, 16], [1, 17], [2, 1], [2, 2], [2, 3], [2, 4], [2, 6], [2, 7], [2, 8],
@@ -42,24 +43,22 @@ def findLines2():
                 [12, 9], [12, 10], [12, 11], [12, 12], [12, 13], [12, 14], [12, 15], [12, 16], [12, 17], [12, 18],
                 [12, 19], [12, 20], [12, 21], [12, 22], [12, 23], [12, 24], [12, 25], [12, 26], [12, 27]]
 
-    randomExcerpt = randrange(1, len(excerpts))
-    print(excerpts[randomExcerpt])
-    print(excerpts[randomExcerpt])
-    print(randomExcerpt)
-
+    randomExcerpt = randrange(0, len(excerpts)-1)
 
 
     start_string = excerpts[randomExcerpt][1]
     end_string = start_string + 1
     text = []
-    #with open('C:\\Users\\Lord of Eight peaks\\PycharmProjects\wallpaperChanger\\autoMeditationsWallpaper\\meditations\\book' + str(1) + '.txt', 'rt') as myfile:
-    with open('C:\\Users\\Lord of Eight peaks\\PycharmProjects\wallpaperChanger\\autoMeditationsWallpaper\\meditations\\book' + str(excerpts[randomExcerpt][0]) + '.txt', 'rt') as myfile:
+
+    #with open('C:\\Users\\Lord of Eight peaks\\PycharmProjects\\StoicWallpaperGenerator\\autoMeditationsWallpaper\\meditations\\book' + str(10) + '.txt', 'rt') as myfile:
+    with open('C:\\Users\\Lord of Eight peaks\\PycharmProjects\\StoicWallpaperGenerator\\autoMeditationsWallpaper\\meditations\\book' + str(excerpts[randomExcerpt][0]) + '.txt', 'rt') as myfile:
 
         for line in myfile:
 
             if len(line) > 1:
                 first_word = line.split()[0]
                 if first_word == int_to_Roman(end_string) + ".":
+
 
                     break
                 elif first_word == int_to_Roman(start_string) + ".":
@@ -68,7 +67,6 @@ def findLines2():
                 elif len(text) != 0:
 
                     text.append(line.rstrip('\n'))
-
 
     textToImage(text, excerpts[randomExcerpt][0])
 
@@ -94,4 +92,3 @@ def int_to_Roman(num):
             num -= val[i]
         i += 1
     return roman_num
-
