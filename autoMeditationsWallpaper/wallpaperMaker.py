@@ -1,8 +1,6 @@
-from pathlib import Path
+import os
 
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
+from PIL import Image, ImageFont, ImageDraw
 
 from autoMeditationsWallpaper.textFormatter import TextFormatter
 
@@ -39,7 +37,7 @@ def number_to_word(i):
 
 
 def textToImage(text, book):
-    img = Image.open(str(Path("autoMeditationsWallpaper/MarcusAureliusWallpaper.png").resolve()))
+    img = Image.open(os.path.join(os.path.dirname(__file__), "MarcusAureliusWallpaper.png"))
     draw = ImageDraw.Draw(img)
     draw.text((90, 720), "The " + (number_to_word(book)) + " Book", (233, 67, 115),
               ImageFont.truetype("timesbd.ttf", 50))

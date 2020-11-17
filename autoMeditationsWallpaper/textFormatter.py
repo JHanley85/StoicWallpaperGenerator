@@ -76,10 +76,7 @@ class TextFormatter:
                     self.format_input_string()
             except RecursionError:
                 print("Formatting failed: RecursionError")
-                print(self.fontSizeMax)
-                print(self.fontSizeMin)
-                print(self.length)
-                print(self.maxLength)
+
 
     def get_formatted_lines(self):
         return self.formatted_lines
