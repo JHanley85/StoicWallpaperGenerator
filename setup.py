@@ -36,7 +36,7 @@ shortcut_table = [
     ]
 
 
-executables = [Executable("stoic_wallpaper_generator.py", icon="logo.ico", shortcutName='stoic_wallpaper_generator', shortcutDir='DesktopFolder')]
+executables = [Executable("stoic_wallpaper_generator.py", icon="logo.ico", shortcutName='stoic_wallpaper_generator', shortcutDir='DesktopFolder', base = "Win32GUI")]
 msi_data = {"Shortcut": shortcut_table}
 bdist_msi_options = {'data': msi_data}
 
