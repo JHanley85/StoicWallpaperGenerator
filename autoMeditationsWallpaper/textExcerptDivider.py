@@ -9,7 +9,7 @@ def number_to_word(i):
     elif i == 3:
         return "Third"
     elif i == 4:
-        return "Forth"
+        return "Fourth"
     elif i == 5:
         return "Fifth"
     elif i == 6:
@@ -17,11 +17,11 @@ def number_to_word(i):
     elif i == 7:
         return "Seventh"
     elif i == 8:
-        return "Eight"
+        return "Eighth"
     elif i == 9:
         return "Ninth"
     elif i == 10:
-        return "Eleventh"
+        return "Tenth"
     elif i == 11:
         return "Eleventh"
     elif i == 12:
